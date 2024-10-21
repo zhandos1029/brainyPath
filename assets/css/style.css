@@ -470,6 +470,7 @@ body {
   padding: 50px 30px;
   text-align: center;
   border-radius: var(--radius-5);
+  height: 350px;
 }
 
 .category-card .card-icon {
@@ -743,6 +744,7 @@ body {
   text-align: center;
   padding: 25px;
   border-radius: var(--radius-10);
+  height: 175px;
 }
 
 .stats-card :is(.card-title, .card-text) { font-family: var(--ff-league_spartan); }
