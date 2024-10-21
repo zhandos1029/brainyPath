@@ -243,7 +243,7 @@ header a{
 
 .carousel.next .time,
 .carousel.prev .time{
-    animation: runningTime 3s linear 1 forwards;
+    animation: runningTime 2s linear 1 forwards;
 }
 @keyframes runningTime{
     from{ width: 100%}
