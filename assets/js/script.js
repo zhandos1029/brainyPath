@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 /**
  * add event on element
  */
@@ -15,8 +13,6 @@ const addEventOnElem = function (elem, type, callback) {
     elem.addEventListener(type, callback);
   }
 }
-
-
 
 /**
  * navbar toggle
@@ -40,8 +36,6 @@ const closeNavbar = function () {
 }
 
 addEventOnElem(navLinks, "click", closeNavbar);
-
-
 
 /**
  * header active when scroll down to 100px
