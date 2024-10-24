@@ -5,16 +5,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { SharedModule } from '../../../shared/shared.module';
 import { LandingHomeComponent } from './home.component';
 import { landingHomeRoutes } from './home.routing';
+import {MatTabsModule} from "@angular/material/tabs";
 
 @NgModule({
     declarations: [
         LandingHomeComponent
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild(landingHomeRoutes),
         MatButtonModule,
         MatIconModule,
-        SharedModule
+        SharedModule,
+        MatTabsModule
     ]
 })
 export class LandingHomeModule

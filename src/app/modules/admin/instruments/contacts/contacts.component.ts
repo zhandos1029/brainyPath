@@ -12,7 +12,9 @@ export class ContactsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   navigateTo(route: string): void {
     this.router.navigate([route]);
   }
+
 }

@@ -8,8 +8,8 @@ import { InitialDataResolver } from './app.resolvers';
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 export const appRoutes: Route[] = [
-    {path: '', pathMatch : 'full', redirectTo: 'main/page'},
-    {path: 'signed-in-redirect', pathMatch : 'full', redirectTo: 'main/page'},
+    {path: '', pathMatch: 'full', redirectTo: 'home'},
+    {path: 'signed-in-redirect', pathMatch: 'full', redirectTo: 'main/page'},
 
     // Auth routes for guests
     {
@@ -47,7 +47,7 @@ export const appRoutes: Route[] = [
             layout: 'empty'
         },
         children   : [
-            {path: 'home', redirectTo: 'sign-in'},
+            {path: 'home', loadChildren: () => import('./modules/landing/home/home.module').then(m => m.LandingHomeModule)},
         ]
     },
 

@@ -7,6 +7,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./page.component.scss']
 })
 export class PageComponent implements OnInit {
+  yearlyBilling: boolean = true;
   constructor(private router: Router) {}
 
   ngOnInit(): void {
