@@ -13,95 +13,109 @@
         </svg>
         <!-- @formatter:on -->
         <div class="z-10 relative flex flex-col items-center">
-            <h2 class="text-xl font-semibold">HELP CENTER</h2>
+            <h2 class="text-xl font-semibold">ЦЕНТР ПОМОЩИ</h2>
             <div class="mt-1 text-4xl sm:text-7xl font-extrabold tracking-tight leading-tight text-center">
-                How can we help you today?
+                Чем мы можем помочь вам сегодня?
             </div>
             <div class="mt-3 sm:text-2xl text-center tracking-tight text-secondary">
-                Search for a topic or question, check out our FAQs and guides, contact us for detailed support
+                Найдите тему или вопрос, ознакомьтесь с нашими часто задаваемыми вопросами и руководствами, свяжитесь с нами для детальной поддержки
             </div>
-            <mat-form-field class="fuse-mat-no-subscript fuse-mat-rounded fuse-mat-bold w-full max-w-80 sm:max-w-120 mt-10 sm:mt-20">
-                <input
-                        matInput
-                        [placeholder]="'Enter a question, topic or keyword'">
-                <mat-icon
-                        matPrefix
-                        [svgIcon]="'heroicons_outline:search'"></mat-icon>
-            </mat-form-field>
         </div>
     </div>
 
     <div class="flex flex-col items-center pb-6 px-6 sm:pb-10 sm:px-10">
         <!-- Cards -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-y-8 md:gap-y-0 md:gap-x-6 w-full max-w-sm md:max-w-4xl -mt-16 sm:-mt-24">
-            <!-- FAQs card -->
+            <!-- Email Card -->
             <div class="relative flex flex-col rounded-2xl shadow hover:shadow-lg overflow-hidden bg-card transition-shadow ease-in-out duration-150">
-                <div class="flex flex-col flex-auto items-center p-8 text-center">
-                    <div class="text-2xl font-semibold">FAQs</div>
-                    <div class="md:max-w-40 mt-1 text-secondary">Frequently asked questions and answers</div>
+                <div class="flex flex-col flex-auto items-center p-4 text-center">
+                    <div class="text-2xl font-semibold">Почта</div>
+                    <div class="md:max-w-40 mt-1 text-secondary">Свяжитесь с нами через электронную почту</div>
                 </div>
                 <div class="flex items-center justify-center py-4 px-8 text-primary-500 dark:text-primary-400 bg-gray-50 dark:bg-transparent dark:border-t">
-                    <a
-                            class="flex items-center"
-                            [routerLink]="['faqs']">
+                    <a href="mailto:test@gmail.com" class="flex items-center">
                         <span class="absolute inset-0"></span>
-                        <span class="font-medium">Go to FAQs</span>
-                        <mat-icon
-                                class="ml-2 icon-size-5 text-current"
-                                [svgIcon]="'heroicons_solid:arrow-narrow-right'"></mat-icon>
+                        <span class="font-medium">Написать на почту</span>
+                        <mat-icon class="ml-2 icon-size-5 text-current" [svgIcon]="'heroicons_solid:mail'"></mat-icon>
                     </a>
                 </div>
             </div>
-            <!-- Guides card -->
+            <!-- Phone Number Card -->
             <div class="relative flex flex-col rounded-2xl shadow hover:shadow-lg overflow-hidden bg-card transition-shadow ease-in-out duration-150">
-                <div class="flex flex-col flex-auto items-center p-8 text-center">
-                    <div class="text-2xl font-semibold">Guides</div>
-                    <div class="md:max-w-40 mt-1 text-secondary">Articles and resources to guide you</div>
+                <div class="flex flex-col flex-auto items-center p-4 text-center">
+                    <div class="text-2xl font-semibold">Телефон</div>
+                    <div class="md:max-w-40 mt-1 text-secondary">Позвоните нам для получения помощи</div>
                 </div>
                 <div class="flex items-center justify-center py-4 px-8 text-primary-500 dark:text-primary-400 bg-gray-50 dark:bg-transparent dark:border-t">
-                    <a
-                            class="flex items-center"
-                            [routerLink]="['guides']">
+                    <a href="tel:+77777777777" class="flex items-center">
                         <span class="absolute inset-0"></span>
-                        <span class="font-medium">Check guides</span>
-                        <mat-icon
-                                class="ml-2 icon-size-5 text-current"
-                                [svgIcon]="'heroicons_solid:arrow-narrow-right'"></mat-icon>
+                        <span class="font-medium">Позвонить</span>
+                        <mat-icon class="ml-2 icon-size-5 text-current" [svgIcon]="'heroicons_solid:phone'"></mat-icon>
                     </a>
                 </div>
             </div>
-            <!-- Support card -->
+            <!-- Additional Contact Option Card -->
             <div class="relative flex flex-col rounded-2xl shadow hover:shadow-lg overflow-hidden bg-card transition-shadow ease-in-out duration-150">
-                <div class="flex flex-col flex-auto items-center p-8 text-center">
-                    <div class="text-2xl font-semibold">Support</div>
-                    <div class="md:max-w-40 mt-1 text-secondary">Contact us for more detailed support</div>
+                <div class="flex flex-col flex-auto items-center p-4 text-center">
+                    <div class="text-2xl font-semibold">Дополнительный контакт</div>
+                    <div class="md:max-w-40 mt-1 text-secondary">Другой способ связи с нами</div>
                 </div>
                 <div class="flex items-center justify-center py-4 px-8 text-primary-500 dark:text-primary-400 bg-gray-50 dark:bg-transparent dark:border-t">
-                    <a
-                            class="flex items-center"
-                            [routerLink]="['support']">
+                    <a href="/" class="flex items-center">
                         <span class="absolute inset-0"></span>
-                        <span class="font-medium">Contact us</span>
-                        <mat-icon
-                                class="ml-2 icon-size-5 text-current"
-                                [svgIcon]="'heroicons_solid:arrow-narrow-right'"></mat-icon>
+                        <span class="font-medium">Связаться другим способом</span>
+                        <mat-icon class="ml-2 icon-size-5 text-current" [svgIcon]="'heroicons_solid:support'"></mat-icon>
                     </a>
                 </div>
             </div>
         </div>
         <!-- FAQs -->
-        <div class="mt-24 text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight text-center">Most frequently asked questions</div>
-        <div class="mt-2 text-xl text-center text-secondary">Here are the most frequently asked questions you may check before getting started</div>
+        <div class="mt-24 text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight text-center">Наиболее часто задаваемые вопросы</div>
+        <div class="mt-2 text-xl text-center text-secondary">Здесь вы найдете наиболее часто задаваемые вопросы, которые помогут вам начать работу</div>
         <mat-accordion class="max-w-4xl mt-12">
             <ng-container>
+
+                <!-- Question 1 -->
                 <mat-expansion-panel>
                     <mat-expansion-panel-header [collapsedHeight]="'56px'">
-                        <mat-panel-title>{{121231231231}}</mat-panel-title>
+                        <mat-panel-title>Как зарегистрироваться на сайте?</mat-panel-title>
                     </mat-expansion-panel-header>
-                    {{789778977978}}
+                    Вы можете зарегистрироваться, нажав на кнопку "Регистрация" в верхней части страницы и следуя инструкциям. Введите необходимые данные, и после подтверждения регистрации вы сможете получить доступ к учебным материалам.
                 </mat-expansion-panel>
+
+                <!-- Question 2 -->
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header [collapsedHeight]="'56px'">
+                        <mat-panel-title>Для кого предназначен этот ресурс?</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    Наш сайт предназначен для учащихся школ с 1 по 11 класс, а также для учителей и родителей, которые хотят получить доступ к качественным учебным материалам и полезным ресурсам для подготовки к урокам и контрольным.
+                </mat-expansion-panel>
+
+                <!-- Question 3 -->
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header [collapsedHeight]="'56px'">
+                        <mat-panel-title>Как использовать слайды на уроках?</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    Слайды могут быть использованы учителями для проведения интерактивных уроков. Просто откройте нужный слайд на экране или устройстве и следуйте структуре урока. Ученики могут также использовать слайды для самостоятельного изучения материала.
+                </mat-expansion-panel>
+
+                <!-- Question 4 -->
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header [collapsedHeight]="'56px'">
+                        <mat-panel-title>Можно ли скачать учебные материалы?</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    Да, зарегистрированные пользователи могут скачивать учебные материалы для использования в режиме оффлайн. Мы предлагаем удобные форматы для скачивания и хранения документов на вашем устройстве.
+                </mat-expansion-panel>
+
+                <!-- Question 5 -->
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header [collapsedHeight]="'56px'">
+                        <mat-panel-title>Какие предметы представлены на сайте?</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    На нашем сайте собраны учебные материалы по всем основным школьным предметам, включая математику, литературу, химию, физику, историю, биологию и другие. Вы можете легко найти материалы по каждому предмету и теме для разных классов.
+                </mat-expansion-panel>
+
             </ng-container>
         </mat-accordion>
     </div>
 </div>
-

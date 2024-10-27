@@ -1,5 +1,5 @@
 <div class="w-full grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4">
-	<fuse-card class="h-[450px] flex flex-col justify-center items-center gap-2 px-14 py-4 pb-3 shadow-custom cursor-pointer"
+	<fuse-card class="h-[350px] flex flex-col justify-center items-center gap-2 px-4 py-2 pb-1 shadow-custom cursor-pointer"
 	           *ngFor="let card of organizationControlCards" (click)="navigateTo(card.route)">
 		<img class="w-[max] rounded-3xl" [src]="card.imgUrl" alt="{{card.name_ru}}">
 		<div class="text-lg font-bold w-[200px] text-center">{{ card.name_ru }}</div>

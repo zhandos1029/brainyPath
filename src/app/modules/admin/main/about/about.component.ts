@@ -69,6 +69,10 @@ export class AboutComponent implements OnInit, OnDestroy
     };
   }
 
+  navigateTo(route: string): void {
+    this._router.navigate([route]);
+  }
+
   /**
    * On destroy
    */

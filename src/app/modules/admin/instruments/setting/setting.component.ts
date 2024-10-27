@@ -44,15 +44,15 @@ export class SettingComponent implements OnInit {
 
     // Create the form
     this.accountForm = this._formBuilder.group({
-      name    : ['Brian Hughes'],
-      username: ['brianh'],
-      title   : ['Senior Frontend Developer'],
-      company : ['YXZ Software'],
-      about   : ['Hey! This is Brian; husband, father and gamer. I\'m mostly passionate about bleeding edge tech and chocolate! 🍫'],
-      email   : ['hughes.brian@mail.com', Validators.email],
-      phone   : ['121-490-33-12'],
-      country : ['usa'],
-      language: ['english']
+      name    : ['Test Test'],
+      username: ['test123'],
+      title   : ['Учитель'],
+      company : ['123 школа'],
+      about   : ['hi!'],
+      email   : ['test@gmail.com', Validators.email],
+      phone   : ['7-777-777-7777'],
+      country : ['kz'],
+      language: ['kazakh']
     });
 
     // Create the form
@@ -68,14 +68,14 @@ export class SettingComponent implements OnInit {
       {
         id         : 'account',
         icon       : 'heroicons_outline:user-circle',
-        title      : 'Account',
-        description: 'Manage your public profile and private information'
+        title      : 'Аккаунт',
+        description: 'Управляйте своим публичным профилем и личной информацией'
       },
       {
         id         : 'security',
         icon       : 'heroicons_outline:lock-closed',
-        title      : 'Security',
-        description: 'Manage your password and 2-step verification preferences'
+        title      : 'Защита',
+        description: 'Управление паролями и предпочтениями двухэтапной проверки'
       }
     ];
 

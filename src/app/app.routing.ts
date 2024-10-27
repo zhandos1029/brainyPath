@@ -68,6 +68,8 @@ export const appRoutes: Route[] = [
 
             {path: 'instruments', loadChildren: () => import('./modules/admin/instruments/instruments.module').then(m => m.InstrumentsModule)},
 
+            {path: 'sub', loadChildren: () => import('./modules/admin/subjects/academy/academy.module').then(m => m.AcademyModule)},
+
             {path: '404-not-found', pathMatch: 'full', loadChildren: () => import('./modules/admin/pages/error/error-404/error-404.module').then(m => m.Error404Module)},
             {path: '**', redirectTo: '404-not-found'}
         ]
