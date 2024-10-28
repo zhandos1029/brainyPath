@@ -2,32 +2,32 @@
 export const categories = [
     {
         id: '9a67dff7-3c38-4052-a335-0cef93438ff6',
-        title: 'Web',
-        slug: 'web'
+        title: 'Механика',
+        slug: 'механика'
     },
     {
         id: 'a89672f5-e00d-4be4-9194-cb9d29f82165',
-        title: 'Firebase',
-        slug: 'firebase'
+        title: 'Оптика',
+        slug: 'оптика'
     },
     {
         id: '02f42092-bb23-4552-9ddb-cfdcc235d48f',
-        title: 'Cloud',
-        slug: 'cloud'
+        title: 'Термодинамика',
+        slug: 'термодинамика'
     },
     {
         id: '5648a630-979f-4403-8c41-fc9790dea8cd',
-        title: 'Android',
-        slug: 'android'
+        title: 'Квантовая физика',
+        slug: 'квантовая'
     }
 ];
 export const courses = [
     {
         id: '694e4e5f-f25f-470b-bd0e-26b1d4f64028',
-        title: 'Basics of Angular',
+        title: 'Законы Ньютона',
         slug: 'basics-of-angular',
-        description: 'Introductory course for Angular and framework basics',
-        category: 'web',
+        description: 'Законы Ньютона',
+        category: 'механика',
         duration: 30,
         totalSteps: 11,
         updatedAt: 'Jun 28, 2021',
@@ -39,10 +39,10 @@ export const courses = [
     },
     {
         id: 'f924007a-2ee9-470b-a316-8d21ed78277f',
-        title: 'Basics of TypeScript',
+        title: 'Лагранжева механика',
         slug: 'basics-of-typeScript',
-        description: 'Beginner course for Typescript and its basics',
-        category: 'web',
+        description: 'Лагранжева механика',
+        category: 'механика',
         duration: 60,
         totalSteps: 11,
         updatedAt: 'Nov 01, 2021',

@@ -66,81 +66,11 @@ export const project = {
             'last-week': [19, 16, 42, 23]
         }
     },
-    schedule          : {
-        today   : [
-            {
-                title   : 'Group Meeting',
-                time    : 'in 32 minutes',
-                location: 'Conference room 1B'
-            },
-            {
-                title: 'Coffee Break',
-                time : '10:30 AM'
-            },
-            {
-                title: 'Public Beta Release',
-                time : '11:00 AM'
-            },
-            {
-                title: 'Lunch',
-                time : '12:10 PM'
-            },
-            {
-                title   : 'Dinner with David',
-                time    : '05:30 PM',
-                location: 'Magnolia'
-            },
-            {
-                title   : 'Jane\'s Birthday Party',
-                time    : '07:30 PM',
-                location: 'Home'
-            },
-            {
-                title   : 'Overseer\'s Retirement Party',
-                time    : '09:30 PM',
-                location: 'Overseer\'s room'
-            }
-        ],
-        tomorrow: [
-            {
-                title   : 'Marketing Meeting',
-                time    : '09:00 AM',
-                location: 'Conference room 1A'
-            },
-            {
-                title: 'Public Announcement',
-                time : '11:00 AM'
-            },
-            {
-                title: 'Lunch',
-                time : '12:10 PM'
-            },
-            {
-                title   : 'Meeting with Beta Testers',
-                time    : '03:00 PM',
-                location: 'Conference room 2C'
-            },
-            {
-                title: 'Live Stream',
-                time : '05:30 PM'
-            },
-            {
-                title   : 'Release Party',
-                time    : '07:30 PM',
-                location: 'CEO\'s house'
-            },
-            {
-                title   : 'CEO\'s Private Party',
-                time    : '09:30 PM',
-                location: 'CEO\'s Penthouse'
-            }
-        ]
-    },
     budgetDistribution: {
         categories: ['Продуктивность', 'Удобность', 'Легкость управление', 'Дизайн', 'Защита'],
         series    : [
             {
-                name: 'Budget',
+                name: 'Статистика',
                 data: [89, 93, 96, 100, 100]
             }
         ]
