@@ -19,7 +19,7 @@ export const OrganizationControlCards: OrganizationControlCard[] = [
     {
         name_kz: "Химия",
         name_ru: "Химия",
-        imgUrl: "./assets/images/pages/химия.jpg",
+        imgUrl: "./assets/images/pages/chemistry.jpg",
         finished: 56,
         all: 61,
         route: 'subjects/chemistry'
@@ -43,7 +43,7 @@ export const OrganizationControlCards: OrganizationControlCard[] = [
     {
         name_kz: "Қазақстан тарихы",
         name_ru: "Қазақстан тарихы",
-        imgUrl: "./assets/images/pages/химия.jpg",
+        imgUrl: "./assets/images/pages/literature.jpg",
         finished: 3,
         all: 3,
         route: 'subjects/geography'
@@ -51,7 +51,7 @@ export const OrganizationControlCards: OrganizationControlCard[] = [
     {
         name_kz: "Қазак тілі",
         name_ru: "Қазак тілі",
-        imgUrl: "./assets/images/pages/биология.jpg",
+        imgUrl: "./assets/images/pages/chemistry.jpg",
         finished: 20,
         all: 20,
         route: 'subjects/geography'
@@ -67,7 +67,7 @@ export const OrganizationControlCards: OrganizationControlCard[] = [
     {
         name_kz: "Алгебра",
         name_ru: "Алгебра",
-        imgUrl: "./assets/images/pages/химия.jpg",
+        imgUrl: "./assets/images/pages/math.jpg",
         finished: 866,
         all: 866,
         route: 'subjects/geography'

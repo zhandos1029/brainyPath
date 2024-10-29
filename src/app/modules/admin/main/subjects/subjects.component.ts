@@ -1,25 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {
-  OrganizationControlCard,
-  OrganizationControlCards
+    OrganizationControlCard,
+    OrganizationControlCards
 } from "../../../../components/organization-cards/organization-control-cards";
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-subjects',
-  templateUrl: './subjects.component.html',
-  styleUrls: ['./subjects.component.scss']
+    selector: 'app-subjects',
+    templateUrl: './subjects.component.html',
+    styleUrls: ['./subjects.component.scss']
 })
 export class SubjectsComponent implements OnInit {
-  organizationControlCards: OrganizationControlCard[] = OrganizationControlCards
+    organizationControlCards: OrganizationControlCard[] = OrganizationControlCards
 
-  constructor(private router: Router) {
-  }
+    constructor(private router: Router) {
+    }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
-  navigateTo(route: string): void {
-    this.router.navigate([route]);
-  }
+    navigateTo(route: string): void {
+        this.router.navigate([route]);
+    }
 }

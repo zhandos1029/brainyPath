@@ -1,21 +1,19 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
     selector     : 'landing-home',
     templateUrl  : './home.component.html',
-    encapsulation: ViewEncapsulation.None,
-    styles       : [`
-        .color {
-            color: var(--fuse-primary);
-        }
-    `]
+    styleUrls  : ['./home.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
-export class LandingHomeComponent
-{
-    /**
-     * Constructor
-     */
-    constructor()
-    {
+export class LandingHomeComponent {
+    yearlyBilling: boolean = true;
+    constructor(private router: Router) {}
+
+    ngOnInit(): void {
+    }
+    navigateTo(route: string): void {
+        this.router.navigate([route]);
     }
 }

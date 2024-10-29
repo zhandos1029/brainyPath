@@ -8,8 +8,8 @@ import { InitialDataResolver } from './app.resolvers';
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 export const appRoutes: Route[] = [
-    {path: '', pathMatch: 'full', redirectTo: 'home'},
-    {path: 'signed-in-redirect', pathMatch: 'full', redirectTo: 'main/page'},
+    {path: '', pathMatch: 'full', redirectTo: 'main/subjects'},
+    {path: 'signed-in-redirect', pathMatch: 'full', redirectTo: 'main/subjects'},
 
     // Auth routes for guests
     {

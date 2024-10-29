@@ -6,6 +6,7 @@ import { SharedModule } from '../../../shared/shared.module';
 import { LandingHomeComponent } from './home.component';
 import { landingHomeRoutes } from './home.routing';
 import {MatTabsModule} from "@angular/material/tabs";
+import {FuseCardModule} from "../../../../@fuse/components/card";
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import {MatTabsModule} from "@angular/material/tabs";
         MatButtonModule,
         MatIconModule,
         SharedModule,
-        MatTabsModule
+        MatTabsModule,
+        FuseCardModule
     ]
 })
 export class LandingHomeModule
