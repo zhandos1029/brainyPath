@@ -70,6 +70,16 @@ export class DenseLayoutComponent implements OnInit, OnDestroy
                 // Change the navigation appearance
                 this.navigationAppearance = this.isScreenSmall ? 'default' : 'dense';
             });
+
+        // Check if the URL starts with /sub and toggle navigation if true
+        this._router.events
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe(() => {
+                const currentUrl = this._router.url;
+                if (currentUrl.startsWith('/sub')) {
+                    this.toggleNavigation('mainNavigation');
+                }
+            });
     }
 
     /**

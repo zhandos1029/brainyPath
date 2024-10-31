@@ -22,13 +22,14 @@ import {MatSortModule} from "@angular/material/sort";
 import {NgApexchartsModule} from "ng-apexcharts";
 import {SharedModule} from "../../../shared/shared.module";
 
-
 @NgModule({
-  declarations: [
-    AboutComponent,
-    PageComponent,
-    SubjectsComponent
-  ],
+    declarations: [
+        AboutComponent,
+        PageComponent,
+        SubjectsComponent
+    ],
+    exports: [
+    ],
     imports: [
         CommonModule,
         RouterModule.forChild(mainRoutes),

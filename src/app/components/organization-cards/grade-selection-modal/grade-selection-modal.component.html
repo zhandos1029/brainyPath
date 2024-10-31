@@ -1,0 +1,17 @@
+<!-- Modal Background -->
+<div class="modal-overlay" *ngIf="isOpen">
+    <!-- Modal Container -->
+    <div class="modal-container animate-fade-in">
+        <h2 class="modal-title">Выберите класс</h2>
+
+        <!-- Grade Buttons Grid -->
+        <div class="grade-buttons">
+            <button *ngFor="let grade of grades" (click)="onSelectGrade(grade)" class="grade-button animate-scale-up">
+                Класс {{ grade }}
+            </button>
+        </div>
+
+        <!-- Close Button -->
+        <button class="close-button" (click)="onClose()">Закрыть</button>
+    </div>
+</div>

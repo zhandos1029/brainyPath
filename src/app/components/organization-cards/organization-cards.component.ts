@@ -1,7 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
-import {OrganizationControlCard} from "./organization-control-cards";
-
+// organization-cards.component.ts
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
+import { OrganizationControlCard } from "./organization-control-cards";
 
 @Component({
     selector: 'app-organization-cards',
@@ -10,14 +10,24 @@ import {OrganizationControlCard} from "./organization-control-cards";
 })
 export class OrganizationCardsComponent implements OnInit {
     @Input() organizationControlCards: OrganizationControlCard[];
+    selectedRoute: string;
+    isModalOpen = false;
 
-    constructor(private router: Router) {
+    constructor(private router: Router) {}
+
+    ngOnInit(): void {}
+
+    openModal(route: string): void {
+        this.selectedRoute = route;
+        this.isModalOpen = true;
     }
 
-    ngOnInit(): void {
+    closeModal(): void {
+        this.isModalOpen = false;
     }
 
-    navigateTo(route: string): void {
-        this.router.navigate([route]);
+    navigateToGrade(grade: number): void {
+        // this.router.navigate([`${this.selectedRoute}/${grade}`]);
+        this.router.navigate([`/sub`]);
     }
 }

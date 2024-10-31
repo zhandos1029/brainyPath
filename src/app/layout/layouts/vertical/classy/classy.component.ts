@@ -77,6 +77,16 @@ export class ClassyLayoutComponent implements OnInit, OnDestroy
                 // Check if the screen is small
                 this.isScreenSmall = !matchingAliases.includes('md');
             });
+
+        // Check if the URL starts with /sub and toggle navigation if true
+        this._router.events
+            .pipe(takeUntil(this._unsubscribeAll))
+            .subscribe(() => {
+                const currentUrl = this._router.url;
+                if (currentUrl.startsWith('/sub')) {
+                    this.toggleNavigation('mainNavigation');
+                }
+            });
     }
 
     /**

@@ -14,12 +14,14 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import { OrganizationCardsComponent } from './organization-cards/organization-cards.component';
+import { GradeSelectionModalComponent } from './organization-cards/grade-selection-modal/grade-selection-modal.component';
 
 @NgModule({
     declarations: [
         DetailsTableComponent,
         BreadCrumbsComponent,
         OrganizationCardsComponent,
+        GradeSelectionModalComponent,
     ],
     imports: [
         SharedModule,
@@ -33,13 +35,13 @@ import { OrganizationCardsComponent } from './organization-cards/organization-ca
         MatMenuModule,
         MatFormFieldModule,
         MatOptionModule,
-        MatSelectModule,
-
+        MatSelectModule
     ],
     exports: [
         DetailsTableComponent,
         BreadCrumbsComponent,
         OrganizationCardsComponent,
+        GradeSelectionModalComponent
     ]
 })
 export class ComponentModule
