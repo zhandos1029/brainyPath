@@ -95,7 +95,7 @@ export class EnterpriseLayoutComponent implements OnInit, OnDestroy
         if ( navigation )
         {
             // Toggle the opened status
-            navigation.toggle();
+            navigation.toggle(false);
         }
     }
 }

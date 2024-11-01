@@ -105,7 +105,7 @@ export class CompactLayoutComponent implements OnInit, OnDestroy
         if ( navigation )
         {
             // Toggle the opened status
-            navigation.toggle();
+            navigation.toggle(false);
         }
     }
 }

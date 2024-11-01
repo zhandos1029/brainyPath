@@ -5,6 +5,7 @@ import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { BehaviorSubject, combineLatest, Subject, takeUntil } from 'rxjs';
 import {Category, Course} from "../academy.types";
 import {AcademyService} from "../academy.service";
+import {FuseNavigationService, FuseVerticalNavigationComponent} from "../../../../../../@fuse/components/navigation";
 
 @Component({
     selector       : 'academy-list',
@@ -36,7 +37,8 @@ export class AcademyListComponent implements OnInit, OnDestroy
         private _activatedRoute: ActivatedRoute,
         private _changeDetectorRef: ChangeDetectorRef,
         private _router: Router,
-        private _academyService: AcademyService
+        private _academyService: AcademyService,
+        private _fuseNavigationService: FuseNavigationService
     )
     {
     }
@@ -97,6 +99,11 @@ export class AcademyListComponent implements OnInit, OnDestroy
                     this.filteredCourses = this.filteredCourses.filter(course => course.progress.completed === 0);
                 }
             });
+
+        const navigation = this._fuseNavigationService.getComponent<FuseVerticalNavigationComponent>("mainNavigation");
+            if ( navigation ) {
+                navigation.toggle(true);
+            }
     }
 
     /**

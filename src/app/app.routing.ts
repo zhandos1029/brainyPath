@@ -8,7 +8,7 @@ import { InitialDataResolver } from './app.resolvers';
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 export const appRoutes: Route[] = [
-    {path: '', pathMatch: 'full', redirectTo: 'main/subjects'},
+    {path: '', pathMatch: 'full', redirectTo: 'home'},
     {path: 'signed-in-redirect', pathMatch: 'full', redirectTo: 'main/subjects'},
 
     // Auth routes for guests
@@ -68,7 +68,7 @@ export const appRoutes: Route[] = [
 
             {path: 'instruments', loadChildren: () => import('./modules/admin/instruments/instruments.module').then(m => m.InstrumentsModule)},
 
-            {path: 'sub', loadChildren: () => import('./modules/admin/subjects/academy/academy.module').then(m => m.AcademyModule)},
+            {path: 'subjects/physics/:grade', loadChildren: () => import('./modules/admin/subjects/academy/academy.module').then(m => m.AcademyModule)},
 
             {path: '404-not-found', pathMatch: 'full', loadChildren: () => import('./modules/admin/pages/error/error-404/error-404.module').then(m => m.Error404Module)},
             {path: '**', redirectTo: '404-not-found'}

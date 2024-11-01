@@ -66,16 +66,6 @@ export class ClassicLayoutComponent implements OnInit, OnDestroy
                 // Check if the screen is small
                 this.isScreenSmall = !matchingAliases.includes('md');
             });
-
-        // Check if the URL starts with /sub and toggle navigation if true
-        this._router.events
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe(() => {
-                const currentUrl = this._router.url;
-                if (currentUrl.startsWith('/sub')) {
-                    this.toggleNavigation('mainNavigation');
-                }
-            });
     }
 
     /**
@@ -97,15 +87,14 @@ export class ClassicLayoutComponent implements OnInit, OnDestroy
      *
      * @param name
      */
-    toggleNavigation(name: string): void
-    {
+    toggleNavigation(name: string): void {
         // Get the navigation
         const navigation = this._fuseNavigationService.getComponent<FuseVerticalNavigationComponent>(name);
 
         if ( navigation )
         {
             // Toggle the opened status
-            navigation.toggle();
+            navigation.toggle(false);
         }
     }
 }

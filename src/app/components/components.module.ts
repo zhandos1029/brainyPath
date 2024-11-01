@@ -15,6 +15,7 @@ import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 import { OrganizationCardsComponent } from './organization-cards/organization-cards.component';
 import { GradeSelectionModalComponent } from './organization-cards/grade-selection-modal/grade-selection-modal.component';
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 @NgModule({
     declarations: [
@@ -35,7 +36,8 @@ import { GradeSelectionModalComponent } from './organization-cards/grade-selecti
         MatMenuModule,
         MatFormFieldModule,
         MatOptionModule,
-        MatSelectModule
+        MatSelectModule,
+        MatButtonToggleModule
     ],
     exports: [
         DetailsTableComponent,

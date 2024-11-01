@@ -5,6 +5,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { FuseMediaWatcherService } from '@fuse/services/media-watcher';
 import {Category, Course} from "../academy.types";
 import {AcademyService} from "../academy.service";
+import {FuseNavigationService, FuseVerticalNavigationComponent} from "../../../../../../@fuse/components/navigation";
 @Component({
     selector       : 'academy-details',
     templateUrl    : './details.component.html',
@@ -29,7 +30,8 @@ export class AcademyDetailsComponent implements OnInit, OnDestroy
         private _academyService: AcademyService,
         private _changeDetectorRef: ChangeDetectorRef,
         private _elementRef: ElementRef,
-        private _fuseMediaWatcherService: FuseMediaWatcherService
+        private _fuseMediaWatcherService: FuseMediaWatcherService,
+        private _fuseNavigationService: FuseNavigationService
     )
     {
     }
@@ -90,6 +92,11 @@ export class AcademyDetailsComponent implements OnInit, OnDestroy
                 // Mark for check
                 this._changeDetectorRef.markForCheck();
             });
+
+            const navigation = this._fuseNavigationService.getComponent<FuseVerticalNavigationComponent>("mainNavigation");
+            if ( navigation ) {
+                navigation.toggle(true);
+            }
     }
 
     /**

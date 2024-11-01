@@ -439,10 +439,14 @@ export class FuseVerticalNavigationComponent implements OnChanges, OnInit, After
     /**
      * Toggle the navigation
      */
-    toggle(): void
+    toggle(status): void
     {
         // Toggle
-        if ( this.opened )
+        if ( status )
+        {
+            this.close();
+        }
+        else if ( this.opened )
         {
             this.close();
         }

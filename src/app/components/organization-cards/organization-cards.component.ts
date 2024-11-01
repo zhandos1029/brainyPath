@@ -1,4 +1,3 @@
-// organization-cards.component.ts
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { OrganizationControlCard } from "./organization-control-cards";
@@ -27,7 +26,6 @@ export class OrganizationCardsComponent implements OnInit {
     }
 
     navigateToGrade(grade: number): void {
-        // this.router.navigate([`${this.selectedRoute}/${grade}`]);
-        this.router.navigate([`/sub`]);
+        this.router.navigate([`${this.selectedRoute}/${grade}`]);
     }
 }

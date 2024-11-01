@@ -1,4 +1,6 @@
 /* eslint-disable */
+import {physics2CourseContent, physics3CourseContent, physicsCourseContent} from "./physics";
+
 export const categories = [
     {
         id: 'mechanical',
@@ -29,7 +31,7 @@ export const courses = [
         description: 'Законы Ньютона',
         category: 'механика',
         duration: 45,
-        totalSteps: 11,
+        totalSteps: 3,
         updatedAt: 'Jun 28, 2021',
         featured: true,
         progress: {
@@ -44,7 +46,7 @@ export const courses = [
         description: 'Лагранжева механика',
         category: 'механика',
         duration: 90,
-        totalSteps: 11,
+        totalSteps: 3,
         updatedAt: 'Nov 01, 2021',
         featured: true,
         progress: {
@@ -53,62 +55,24 @@ export const courses = [
         }
     },
 ];
-export const demoCourseContent = `
-<h2>
-    Accusantium aspernatur autem enim
-</h2>
-<p>
-    Blanditiis, fugit voluptate! Assumenda blanditiis consectetur, labque cupiditate ducimus eaque earum, fugiat illum
-    ipsa, necessitatibus omnis quaerat reiciendis totam. Architecto, <strong>facere</strong> illum molestiae nihil nulla
-    quibusdam quidem vel! Atque <em>blanditiis deserunt</em>.
-</p>
-<p>
-    Debitis deserunt doloremque labore laboriosam magni minus odit:
-</p>
-<ol>
-    <li>Asperiores dicta esse maiores nobis officiis.</li>
-    <li>Accusamus aliquid debitis dolore illo ipsam molettiae possimus.</li>
-    <li>Magnam mollitia pariatur perspiciatis quasi quidem tenetur voluptatem! Adipisci aspernatur assumenda dicta.</li>
-</ol>
-<p>
-    Animi fugit incidunt iure magni maiores molestias.
-</p>
-<h3>
-    Consequatur iusto soluta
-</h3>
-<p>
-    Aliquid asperiores corporis — deserunt dolorum ducimus eius eligendi explicabo quaerat suscipit voluptas.
-</p>
-<p>
-    Deserunt dolor eos et illum laborum magni molestiae mollitia:
-</p>
-<blockquote>
-    <p>Autem beatae consectetur consequatur, facere, facilis fugiat id illo, impedit numquam optio quis sunt ducimus illo.</p>
-</blockquote>
-<p>
-    Adipisci consequuntur doloribus facere in ipsam maxime molestias pofro quam:
-</p>
-<figure>
-    <img
-        src="../../../../assets/images/pages/img_6074.jpg"
-        alt="">
-    <figcaption>
-        Accusamus blanditiis labque delectus esse et eum excepturi, impedit ipsam iste maiores minima mollitia, nihil obcaecati
-        placeat quaerat qui quidem sint unde!
-    </figcaption>
-</figure>
-`;
+
 export const demoCourseSteps = [
     {
         order: 0,
         title: 'Introduction',
         subtitle: 'Introducing the library and how it works',
-        content: `<h2 class="text-2xl sm:text-3xl">Introduction</h1> ${demoCourseContent}`
+        content: `<h2 class="text-2xl sm:text-3xl">Физика</h1> ${physicsCourseContent}`
     },
     {
         order: 1,
-        title: 'Get the sample code',
+        title: 'Introduction 2',
         subtitle: 'Where to find the sample code and how to access it',
-        content: `<h2 class="text-2xl sm:text-3xl">Get the sample code</h1> ${demoCourseContent}`
+        content: `<h2 class="text-2xl sm:text-3xl">2 Физика</h1> ${physics2CourseContent}`
+    },
+    {
+        order: 2,
+        title: 'Introduction 3',
+        subtitle: 'Where to find the sample code and how to access it',
+        content: `<h2 class="text-2xl sm:text-3xl">3 Физика</h1> ${physics3CourseContent}`
     }
 ];
