@@ -8,6 +8,7 @@ import { landingHomeRoutes } from './home.routing';
 import {MatTabsModule} from "@angular/material/tabs";
 import {FuseCardModule} from "../../../../@fuse/components/card";
 import {LanguagesModule} from "../../../layout/common/languages/languages.module";
+import {TranslocoModule} from "@ngneat/transloco";
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import {LanguagesModule} from "../../../layout/common/languages/languages.module
         SharedModule,
         MatTabsModule,
         FuseCardModule,
-        LanguagesModule
+        LanguagesModule,
+        TranslocoModule
     ]
 })
 export class LandingHomeModule

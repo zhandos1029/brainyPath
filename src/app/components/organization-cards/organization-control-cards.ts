@@ -1,11 +1,13 @@
 export type OrganizationControlCard = {
-    name_kz: string,
-    name_ru: string,
-    imgUrl: string,
-    finished: number
-    all: number,
-    route: string
-}
+    name_kz: string;
+    name_ru: string;
+    imgUrl: string;
+    finished: number;
+    all: number;
+    route: string;
+    minGrade?: number;
+    maxGrade?: number;
+};
 
 export const OrganizationControlCards: OrganizationControlCard[] = [
     {
@@ -14,7 +16,9 @@ export const OrganizationControlCards: OrganizationControlCard[] = [
         imgUrl: "./assets/images/pages/физика.jpg",
         finished: 14,
         all: 14,
-        route: 'subjects/physics'
+        route: 'subjects/physics',
+        minGrade: 7,
+        maxGrade: 11
     },
     {
         name_kz: "Химия",
@@ -22,7 +26,9 @@ export const OrganizationControlCards: OrganizationControlCard[] = [
         imgUrl: "./assets/images/pages/chemistry.jpg",
         finished: 56,
         all: 61,
-        route: 'subjects/chemistry'
+        route: 'subjects/chemistry',
+        minGrade: 8,
+        maxGrade: 11
     },
     {
         name_kz: "Биология",
@@ -30,7 +36,9 @@ export const OrganizationControlCards: OrganizationControlCard[] = [
         imgUrl: "./assets/images/pages/биология.jpg",
         finished: 10,
         all: 11,
-        route: 'subjects/biology'
+        route: 'subjects/biology',
+        minGrade: 7,
+        maxGrade: 11
     },
     {
         name_kz: "География",
@@ -38,31 +46,39 @@ export const OrganizationControlCards: OrganizationControlCard[] = [
         imgUrl: "./assets/images/pages/физика.jpg",
         finished: 18,
         all: 19,
-        route: 'subjects/geography'
+        route: 'subjects/geography',
+        minGrade: 6,
+        maxGrade: 11
     },
     {
         name_kz: "Қазақстан тарихы",
-        name_ru: "Қазақстан тарихы",
+        name_ru: "История Казахстана",
         imgUrl: "./assets/images/pages/literature.jpg",
         finished: 3,
         all: 3,
-        route: 'subjects/geography'
+        route: 'subjects/geography',
+        minGrade: 6,
+        maxGrade: 11
     },
     {
         name_kz: "Қазак тілі",
-        name_ru: "Қазак тілі",
+        name_ru: "Казахский язык",
         imgUrl: "./assets/images/pages/chemistry.jpg",
         finished: 20,
         all: 20,
-        route: 'subjects/geography'
+        route: 'subjects/geography',
+        minGrade: 1,
+        maxGrade: 11
     },
     {
         name_kz: "Орыс тілі",
-        name_ru: "Орыс тілі",
+        name_ru: "Русский язык",
         imgUrl: "./assets/images/pages/физика.jpg",
         finished: 153,
         all: 153,
-        route: 'subjects/geography'
+        route: 'subjects/geography',
+        minGrade: 1,
+        maxGrade: 11
     },
     {
         name_kz: "Алгебра",
@@ -70,6 +86,8 @@ export const OrganizationControlCards: OrganizationControlCard[] = [
         imgUrl: "./assets/images/pages/math.jpg",
         finished: 866,
         all: 866,
-        route: 'subjects/geography'
-    },
-]
+        route: 'subjects/geography',
+        minGrade: 6,
+        maxGrade: 11
+    }
+];

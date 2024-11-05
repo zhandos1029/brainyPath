@@ -1,4 +1,4 @@
-<div class="flex flex-col flex-auto min-w-0">
+<div class="flex flex-col flex-auto min-w-0" *transloco="let t">
 
     <!-- Header -->
     <div class="bg-card">
@@ -7,8 +7,8 @@
                 <!-- Avatar and name -->
                 <div class="flex flex-auto items-center min-w-0">
                     <div class="flex flex-col min-w-0 ml-4">
-                        <ng-container *transloco="let t">
-                            <div class="text-2xl md:text-5xl font-semibold tracking-tight leading-7 md:leading-snug truncate">{{t('О нас')}}</div>
+                        <ng-container>
+                            <div class="text-2xl md:text-5xl font-semibold tracking-tight leading-7 md:leading-snug truncate">{{t('about_us')}}</div>
                         </ng-container>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                         <mat-icon
                                 class="icon-size-5"
                                 [svgIcon]="'heroicons_solid:home'"></mat-icon>
-                        <span class="ml-2">Главная</span>
+                        <span class="ml-2">{{t('home')}}</span>
                     </button>
                     <button
                             class="fuse-mat-button-rounded"
@@ -32,7 +32,7 @@
                         <mat-icon
                                 class="icon-size-5"
                                 [svgIcon]="'heroicons_solid:book-open'"></mat-icon>
-                        <span class="ml-2">Предметы</span>
+                        <span class="ml-2">{{t('subjects')}}</span>
                     </button>
                 </div>
             </div>
@@ -46,145 +46,114 @@
             <mat-tab-group
                     class="sm:px-2"
                     [animationDuration]="'0'">
-                <!-- Home -->
-                <mat-tab label="О нас">
+                <!-- About Us -->
+                <mat-tab label="{{t('about_us')}}">
                     <ng-template matTabContent>
                         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full min-w-0">
-                            <!-- Summary -->
+                            <!-- Summaries -->
                             <div class="flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden">
                                 <div class="flex items-start justify-between">
-                                    <div class="text-lg font-medium tracking-tight leading-6 truncate">Тема</div>
+                                    <div class="text-lg font-medium tracking-tight leading-6 truncate">{{t('topics')}}</div>
                                 </div>
                                 <div class="flex flex-col items-center mt-2">
-                                    <div class="text-7xl sm:text-8xl font-bold tracking-tight leading-none text-blue-500">
-                                        1334
-                                    </div>
-                                    <div class="text-lg font-medium text-blue-600 dark:text-blue-500">Добавленные темы
-                                    </div>
+                                    <div class="text-7xl sm:text-8xl font-bold tracking-tight leading-none text-blue-500">1334</div>
+                                    <div class="text-lg font-medium text-blue-600 dark:text-blue-500">{{t('added_topics')}}</div>
                                     <div class="flex items-baseline justify-center w-full mt-5 text-secondary">
-                                        <div class="text-md font-medium truncate">Завершенные:</div>
+                                        <div class="text-md font-medium truncate">{{t('completed')}}:</div>
                                         <div class="ml-1.5 text-lg font-semibold">1334</div>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden">
                                 <div class="flex items-start justify-between">
-                                    <div class="text-lg font-medium tracking-tight leading-6 truncate">Школы</div>
+                                    <div class="text-lg font-medium tracking-tight leading-6 truncate">{{t('schools')}}</div>
                                 </div>
                                 <div class="flex flex-col items-center mt-2">
-                                    <div class="text-7xl sm:text-8xl font-bold tracking-tight leading-none text-green-500">
-                                        1500
-                                    </div>
-                                    <div class="text-lg font-medium text-green-600 dark:text-green-500">
-                                        Зарегистрированных школ
-                                    </div>
+                                    <div class="text-7xl sm:text-8xl font-bold tracking-tight leading-none text-green-500">1500</div>
+                                    <div class="text-lg font-medium text-green-600 dark:text-green-500">{{t('registered_schools')}}</div>
                                     <div class="flex items-baseline justify-center w-full mt-5 text-secondary">
-                                        <div class="text-md font-medium truncate">Активные:</div>
+                                        <div class="text-md font-medium truncate">{{t('active')}}:</div>
                                         <div class="ml-1.5 text-lg font-semibold">1300</div>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden">
                                 <div class="flex items-start justify-between">
-                                    <div class="text-lg font-medium tracking-tight leading-6 truncate">Уроки</div>
+                                    <div class="text-lg font-medium tracking-tight leading-6 truncate">{{t('lessons')}}</div>
                                 </div>
                                 <div class="flex flex-col items-center mt-2">
-                                    <div class="text-7xl sm:text-8xl font-bold tracking-tight leading-none text-red-500">
-                                        500,000
-                                    </div>
-                                    <div class="text-lg font-medium text-red-600 dark:text-red-500">Пройдено уроков
-                                    </div>
+                                    <div class="text-7xl sm:text-8xl font-bold tracking-tight leading-none text-red-500">500,000</div>
+                                    <div class="text-lg font-medium text-red-600 dark:text-red-500">{{t('lessons_taken')}}</div>
                                     <div class="flex items-baseline justify-center w-full mt-5 text-secondary">
-                                        <div class="text-md font-medium truncate">Завершенные уроки:</div>
+                                        <div class="text-md font-medium truncate">{{t('completed_lessons')}}:</div>
                                         <div class="ml-1.5 text-lg font-semibold">480,000</div>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden">
                                 <div class="flex items-start justify-between">
-                                    <div class="text-lg font-medium tracking-tight leading-6 truncate">Пользователи
-                                    </div>
+                                    <div class="text-lg font-medium tracking-tight leading-6 truncate">{{t('users')}}</div>
                                 </div>
                                 <div class="flex flex-col items-center mt-2">
-                                    <div class="text-7xl sm:text-8xl font-bold tracking-tight leading-none text-yellow-500">
-                                        50,000
-                                    </div>
-                                    <div class="text-lg font-medium text-yellow-600 dark:text-yellow-500">Активных
-                                        пользователей
-                                    </div>
+                                    <div class="text-7xl sm:text-8xl font-bold tracking-tight leading-none text-yellow-500">50,000</div>
+                                    <div class="text-lg font-medium text-yellow-600 dark:text-yellow-500">{{t('active_users')}}</div>
                                     <div class="flex items-baseline justify-center w-full mt-5 text-secondary">
-                                        <div class="text-md font-medium truncate">Новые за месяц:</div>
+                                        <div class="text-md font-medium truncate">{{t('new_month')}}:</div>
                                         <div class="ml-1.5 text-lg font-semibold">5,000</div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Github issues summary -->
+
+                            <!-- Overview Section with Mission, Vision -->
                             <div class="sm:col-span-2 md:col-span-4 flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden">
-                                <div class="flex flex-col sm:flex-row items-start justify-between">О нас</div>
+                                <div class="flex flex-col sm:flex-row items-start justify-between">{{t('about_us')}}</div>
                                 <div class="grid grid-cols-1 lg:grid-cols-2 grid-flow-row gap-6 w-full mt-8 sm:mt-4">
                                     <div class="flex flex-col flex-auto">
-                                        <div class="font-medium text-secondary">BrainyPath – это платформа, созданная
-                                            для упрощения и улучшения школьного обучения. Начав более 10 лет назад, мы
-                                            выросли в ресурс, который охватывает все предметы с 1 по 11 класс, помогая
-                                            тысячам учеников. 📚
-                                        </div>
-                                        <div class="flex flex-col sm:flex-row items-start justify-between mt-5">🎯 Миссия</div>
-                                        <div class="font-medium text-secondary">Мы стремимся сделать знания доступными
-                                            для всех, предлагая качественные материалы, которые можно изучать в удобном
-                                            темпе и в любое время. 🌍
-                                        </div>
-                                        <div class="flex flex-col sm:flex-row items-start justify-between mt-5">🌟 Наше видение</div>
-                                        <div class="font-medium text-secondary">Мы верим, что знания должны быть
-                                            доступны каждому, независимо от места проживания, возможностей или ресурсов. В основе нашей работы лежит стремление к инновациям и постоянному улучшению. Мы создаем такие условия обучения, при которых ученики могут легко
-                                            углубляться в темы, а учителя и родители получают поддержку на каждом этапе. 💡
-                                        </div>
-                                        <div class="flex flex-col sm:flex-row items-start justify-between mt-5">
-                                            Присоединяйтесь к BrainyPath и сделайте обучение интересным и доступным! 🚀
-                                        </div>
+                                        <div class="font-medium text-secondary">{{t('brainypath_intro')}}</div>
+                                        <div class="flex flex-col sm:flex-row items-start justify-between mt-5">{{t('mission')}}</div>
+                                        <div class="font-medium text-secondary">{{t('mission_description')}}</div>
+                                        <div class="flex flex-col sm:flex-row items-start justify-between mt-5">{{t('vision')}}</div>
+                                        <div class="font-medium text-secondary">{{t('vision_description')}}</div>
+                                        <div class="flex flex-col sm:flex-row items-start justify-between mt-5">{{t('join_us')}}</div>
                                     </div>
-                                    <!-- Overview -->
                                     <div class="flex flex-col">
-                                        <div class="font-medium text-secondary">Overview</div>
+                                        <div class="font-medium text-secondary">{{t('overview')}}</div>
                                         <div class="flex-auto grid grid-cols-4 gap-4 mt-6">
-                                            <!-- New issues -->
                                             <div class="col-span-2 flex flex-col items-center justify-center py-8 px-1 rounded-2xl bg-indigo-50 text-indigo-800 dark:bg-white dark:bg-opacity-5 dark:text-indigo-400">
                                                 <div class="text-5xl sm:text-7xl font-semibold leading-none tracking-tight">2013</div>
-                                                <div class="mt-1 text-sm sm:text-lg font-medium">Год основания</div>
+                                                <div class="mt-1 text-sm sm:text-lg font-medium">{{t('year_founded')}}</div>
                                             </div>
-                                            <!-- Closed -->
                                             <div class="col-span-2 flex flex-col items-center justify-center py-8 px-1 rounded-2xl bg-green-50 text-green-800 dark:bg-white dark:bg-opacity-5 dark:text-green-500">
                                                 <div class="text-5xl sm:text-7xl font-semibold leading-none tracking-tight">25,000+</div>
-                                                <div class="mt-1 text-sm sm:text-lg font-medium">Обученных учеников</div>
+                                                <div class="mt-1 text-sm sm:text-lg font-medium">{{t('students_trained')}}</div>
                                             </div>
-                                            <!-- Fixed -->
                                             <div class="col-span-2 sm:col-span-1 flex flex-col items-center justify-center py-8 px-1 rounded-2xl bg-gray-100 text-secondary dark:bg-white dark:bg-opacity-5">
                                                 <div class="text-5xl font-semibold leading-none tracking-tight">120+</div>
-                                                <div class="mt-1 text-sm font-medium text-center">Школ-партнеров</div>
+                                                <div class="mt-1 text-sm font-medium text-center">{{t('partner_schools')}}</div>
                                             </div>
-                                            <!-- Won't fix -->
                                             <div class="col-span-2 sm:col-span-1 flex flex-col items-center justify-center py-8 px-1 rounded-2xl bg-gray-100 text-secondary dark:bg-white dark:bg-opacity-5">
                                                 <div class="text-5xl font-semibold leading-none tracking-tight">3</div>
-                                                <div class="mt-1 text-sm font-medium text-center">Языков интерфейса</div>
+                                                <div class="mt-1 text-sm font-medium text-center">{{t('interface_languages')}}</div>
                                             </div>
-                                            <!-- Re-opened -->
                                             <div class="col-span-2 sm:col-span-1 flex flex-col items-center justify-center py-8 px-1 rounded-2xl bg-gray-100 text-secondary dark:bg-white dark:bg-opacity-5">
                                                 <div class="text-5xl font-semibold leading-none tracking-tight">24/7</div>
-                                                <div class="mt-1 text-sm font-medium text-center">Доступ к обучению</div>
+                                                <div class="mt-1 text-sm font-medium text-center">{{t('access_247')}}</div>
                                             </div>
-                                            <!-- Needs triage -->
                                             <div class="col-span-2 sm:col-span-1 flex flex-col items-center justify-center py-8 px-1 rounded-2xl bg-gray-100 text-secondary dark:bg-white dark:bg-opacity-5">
                                                 <div class="text-5xl font-semibold leading-none tracking-tight">95%</div>
-                                                <div class="mt-1 text-sm font-medium text-center">Уровень удовлетворенности</div>
+                                                <div class="mt-1 text-sm font-medium text-center">{{t('satisfaction_rate')}}</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Budget distribution -->
+
+                            <!-- Statistics Section -->
                             <div class="sm:col-span-3 lg:col-span-4 flex flex-col flex-auto p-6 bg-card shadow rounded-2xl overflow-hidden">
-                                <div class="text-lg font-medium tracking-tight leading-6 truncate">Статистика
-                                    BrainyPath
-                                </div>
+                                <div class="text-lg font-medium tracking-tight leading-6 truncate">{{t('brainypath_statistics')}}</div>
                                 <div class="flex flex-auto">
                                     <apx-chart
                                             class="flex-auto w-full h-100"
@@ -205,38 +174,26 @@
                 </mat-tab>
 
                 <!-- Team -->
-                <mat-tab label="Команда">
+                <mat-tab label="{{t('team')}}">
                     <ng-template matTabContent>
                         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full min-w-0">
                             <ng-container *ngFor="let member of data.teamMembers">
                                 <div class="flex flex-col flex-auto items-center bg-card shadow rounded-2xl overflow-hidden">
-                                    <!-- Avatar & Info -->
                                     <div class="flex flex-col flex-auto w-full p-8 text-center">
                                         <div class="w-32 h-32 mx-auto rounded-full overflow-hidden">
-                                            <img
-                                                    class="w-full h-full object-cover"
-                                                    [src]="member.avatar">
+                                            <img class="w-full h-full object-cover" [src]="member.avatar">
                                         </div>
                                         <div class="mt-6 font-medium">{{member.name}}</div>
                                         <div class="text-secondary">{{member.title}}</div>
                                     </div>
-                                    <!-- Email & Phone -->
                                     <div class="flex items-center w-full border-t divide-x">
-                                        <a
-                                                class="flex flex-auto items-center justify-center py-4 hover:bg-hover"
-                                                [href]="'mailto:' + member.email">
-                                            <mat-icon
-                                                    class="icon-size-5 text-hint"
-                                                    [svgIcon]="'heroicons_solid:mail'"></mat-icon>
-                                            <span class="ml-2">Почта</span>
+                                        <a class="flex flex-auto items-center justify-center py-4 hover:bg-hover" [href]="'mailto:' + member.email">
+                                            <mat-icon class="icon-size-5 text-hint" [svgIcon]="'heroicons_solid:mail'"></mat-icon>
+                                            <span class="ml-2">{{t('email')}}</span>
                                         </a>
-                                        <a
-                                                class="flex flex-auto items-center justify-center py-4 hover:bg-hover"
-                                                [href]="'tel:' + member.phone">
-                                            <mat-icon
-                                                    class="icon-size-5 text-hint"
-                                                    [svgIcon]="'heroicons_solid:phone'"></mat-icon>
-                                            <span class="ml-2">Номер</span>
+                                        <a class="flex flex-auto items-center justify-center py-4 hover:bg-hover" [href]="'tel:' + member.phone">
+                                            <mat-icon class="icon-size-5 text-hint" [svgIcon]="'heroicons_solid:phone'"></mat-icon>
+                                            <span class="ml-2">{{t('phone')}}</span>
                                         </a>
                                     </div>
                                 </div>

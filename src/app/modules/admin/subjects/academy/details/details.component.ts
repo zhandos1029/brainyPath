@@ -6,6 +6,7 @@ import { FuseMediaWatcherService } from '@fuse/services/media-watcher';
 import {Category, Course} from "../academy.types";
 import {AcademyService} from "../academy.service";
 import {FuseNavigationService, FuseVerticalNavigationComponent} from "../../../../../../@fuse/components/navigation";
+import {TranslocoService} from "@ngneat/transloco";
 @Component({
     selector       : 'academy-details',
     templateUrl    : './details.component.html',
@@ -15,6 +16,7 @@ import {FuseNavigationService, FuseVerticalNavigationComponent} from "../../../.
 export class AcademyDetailsComponent implements OnInit, OnDestroy
 {
     @ViewChild('courseSteps', {static: true}) courseSteps: MatTabGroup;
+    currentLanguage: string;
     categories: Category[];
     course: Course;
     currentStep: number = 0;
@@ -31,7 +33,8 @@ export class AcademyDetailsComponent implements OnInit, OnDestroy
         private _changeDetectorRef: ChangeDetectorRef,
         private _elementRef: ElementRef,
         private _fuseMediaWatcherService: FuseMediaWatcherService,
-        private _fuseNavigationService: FuseNavigationService
+        private _fuseNavigationService: FuseNavigationService,
+        private _translocoService: TranslocoService
     )
     {
     }
@@ -45,6 +48,11 @@ export class AcademyDetailsComponent implements OnInit, OnDestroy
      */
     ngOnInit(): void
     {
+        this.currentLanguage = this._translocoService.getActiveLang() || 'ru';
+
+        this._translocoService.langChanges$.subscribe((lang) => {
+            this.currentLanguage = lang;
+        });
         // Get the categories
         this._academyService.categories$
             .pipe(takeUntil(this._unsubscribeAll))

@@ -20,6 +20,7 @@ import {MatMenuModule} from "@angular/material/menu";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {MatTooltipModule} from "@angular/material/tooltip";
+import {TranslocoModule} from "@ngneat/transloco";
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import {MatTooltipModule} from "@angular/material/tooltip";
         MatCheckboxModule,
         MatProgressBarModule,
         MatTooltipModule,
+        TranslocoModule,
     ]
 })
 export class InstrumentsModule { }

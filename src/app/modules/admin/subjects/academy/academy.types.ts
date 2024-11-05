@@ -1,16 +1,14 @@
-export interface Category
-{
+export interface Category {
     id?: string;
-    title?: string;
+    title?: string; // Ключ локализации вместо текста
     slug?: string;
 }
 
-export interface Course
-{
+export interface Course {
     id?: string;
-    title?: string;
+    titleKey?: string;
     slug?: string;
-    description?: string;
+    descriptionKey?: string;
     category?: string;
     duration?: number;
     steps?: {

@@ -4,6 +4,7 @@ import {UntypedFormBuilder, UntypedFormGroup, Validators} from "@angular/forms";
 import {MatDrawer} from "@angular/material/sidenav";
 import {Subject, takeUntil} from "rxjs";
 import {FuseMediaWatcherService} from "../../../../../@fuse/services/media-watcher";
+import {TranslocoService} from "@ngneat/transloco";
 
 @Component({
   selector: 'app-setting',
@@ -13,6 +14,7 @@ import {FuseMediaWatcherService} from "../../../../../@fuse/services/media-watch
 export class SettingComponent implements OnInit {
   securityForm: UntypedFormGroup;
   accountForm: UntypedFormGroup;
+  currentLanguage: string;
 
   @ViewChild('drawer') drawer: MatDrawer;
   drawerMode: 'over' | 'side' = 'side';
@@ -27,7 +29,8 @@ export class SettingComponent implements OnInit {
   constructor(
       private _changeDetectorRef: ChangeDetectorRef,
       private _fuseMediaWatcherService: FuseMediaWatcherService,
-      private _formBuilder: UntypedFormBuilder
+      private _formBuilder: UntypedFormBuilder,
+      private _translocoService: TranslocoService
   )
   {
   }
@@ -41,6 +44,11 @@ export class SettingComponent implements OnInit {
    */
   ngOnInit(): void
   {
+    this.currentLanguage = this._translocoService.getActiveLang() || 'ru';
+
+    this._translocoService.langChanges$.subscribe((lang) => {
+      this.currentLanguage = lang;
+    });
 
     // Create the form
     this.accountForm = this._formBuilder.group({
@@ -68,14 +76,14 @@ export class SettingComponent implements OnInit {
       {
         id         : 'account',
         icon       : 'heroicons_outline:user-circle',
-        title      : 'Аккаунт',
-        description: 'Управляйте своим публичным профилем и личной информацией'
+        title      : this.currentLanguage === 'ru' ? 'Аккаунт' : 'Аккаунт' ,
+        description: this.currentLanguage === 'ru' ?  'Управляйте своим публичным профилем и личной информацией' : 'Қоғамдық профиліңізді және жеке ақпаратыңызды басқарыңыз'
       },
       {
         id         : 'security',
         icon       : 'heroicons_outline:lock-closed',
-        title      : 'Защита',
-        description: 'Управление паролями и предпочтениями двухэтапной проверки'
+        title      : this.currentLanguage === 'ru' ?  'Защита' : 'Қорғау',
+        description: this.currentLanguage === 'ru' ?  'Управление паролями и предпочтениями двухэтапной проверки' : 'Құпия сөздерді және екі сатылы растау теңшелімдерін басқарыңыз'
       }
     ];
 

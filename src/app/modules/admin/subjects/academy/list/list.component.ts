@@ -6,6 +6,7 @@ import { BehaviorSubject, combineLatest, Subject, takeUntil } from 'rxjs';
 import {Category, Course} from "../academy.types";
 import {AcademyService} from "../academy.service";
 import {FuseNavigationService, FuseVerticalNavigationComponent} from "../../../../../../@fuse/components/navigation";
+import {TranslocoService} from "@ngneat/transloco";
 
 @Component({
     selector       : 'academy-list',
@@ -15,6 +16,7 @@ import {FuseNavigationService, FuseVerticalNavigationComponent} from "../../../.
 })
 export class AcademyListComponent implements OnInit, OnDestroy
 {
+    currentLanguage: string;
     categories: Category[];
     courses: Course[];
     filteredCourses: Course[];
@@ -38,7 +40,8 @@ export class AcademyListComponent implements OnInit, OnDestroy
         private _changeDetectorRef: ChangeDetectorRef,
         private _router: Router,
         private _academyService: AcademyService,
-        private _fuseNavigationService: FuseNavigationService
+        private _fuseNavigationService: FuseNavigationService,
+        private _translocoService: TranslocoService
     )
     {
     }
@@ -52,6 +55,11 @@ export class AcademyListComponent implements OnInit, OnDestroy
      */
     ngOnInit(): void
     {
+        this.currentLanguage = this._translocoService.getActiveLang() || 'ru';
+
+        this._translocoService.langChanges$.subscribe((lang) => {
+            this.currentLanguage = lang;
+        });
         // Get the categories
         this._academyService.categories$
             .pipe(takeUntil(this._unsubscribeAll))
@@ -88,8 +96,8 @@ export class AcademyListComponent implements OnInit, OnDestroy
                 // Filter by search query
                 if ( query !== '' )
                 {
-                    this.filteredCourses = this.filteredCourses.filter(course => course.title.toLowerCase().includes(query.toLowerCase())
-                        || course.description.toLowerCase().includes(query.toLowerCase())
+                    this.filteredCourses = this.filteredCourses.filter(course => course.titleKey.toLowerCase().includes(query.toLowerCase())
+                        || course.descriptionKey.toLowerCase().includes(query.toLowerCase())
                         || course.category.toLowerCase().includes(query.toLowerCase()));
                 }
 

@@ -16,6 +16,7 @@ import {AcademyComponent} from "./academy.component";
 import {AcademyDetailsComponent} from "./details/details.component";
 import {AcademyListComponent} from "./list/list.component";
 import {academyRoutes} from "./academy.routing";
+import {TranslocoModule} from "@ngneat/transloco";
 
 @NgModule({
     declarations: [
@@ -23,7 +24,7 @@ import {academyRoutes} from "./academy.routing";
         AcademyDetailsComponent,
         AcademyListComponent
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild(academyRoutes),
         MatButtonModule,
         MatFormFieldModule,
@@ -36,7 +37,8 @@ import {academyRoutes} from "./academy.routing";
         MatTooltipModule,
         FuseFindByKeyPipeModule,
         SharedModule,
-        MatTabsModule
+        MatTabsModule,
+        TranslocoModule
     ]
 })
 export class AcademyModule

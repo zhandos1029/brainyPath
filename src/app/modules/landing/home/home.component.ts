@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import {Router} from "@angular/router";
+import {translate} from "@ngneat/transloco";
 
 @Component({
     selector     : 'landing-home',

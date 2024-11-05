@@ -1,24 +1,20 @@
 <div class="flex flex-col flex-auto min-w-0">
-
     <!-- Header -->
     <div class="relative pt-8 pb-28 px-4 sm:pt-20 sm:pb-48 sm:px-16 overflow-hidden bg-gray-800 dark:bg-gray-900 dark">
-        <!-- Background - @formatter:off -->
-        <!-- Rings -->
-        <svg class="absolute inset-0 pointer-events-none"
-             viewBox="0 0 960 540" width="100%" height="100%" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background Rings -->
+        <svg class="absolute inset-0 pointer-events-none" viewBox="0 0 960 540" width="100%" height="100%" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
             <g class="text-gray-700 opacity-25" fill="none" stroke="currentColor" stroke-width="100">
                 <circle r="234" cx="196" cy="23"></circle>
                 <circle r="234" cx="790" cy="491"></circle>
             </g>
         </svg>
-        <!-- @formatter:on -->
         <div class="z-10 relative flex flex-col items-center">
-            <h2 class="text-xl font-semibold">ЦЕНТР ПОМОЩИ</h2>
+            <h2 class="text-xl font-semibold">{{ 'help_center' | transloco }}</h2>
             <div class="mt-1 text-4xl sm:text-7xl font-extrabold tracking-tight leading-tight text-center">
-                Чем мы можем помочь вам сегодня?
+                {{ 'help_prompt' | transloco }}
             </div>
             <div class="mt-3 sm:text-2xl text-center tracking-tight text-secondary">
-                Найдите тему или вопрос, ознакомьтесь с нашими часто задаваемыми вопросами и руководствами, свяжитесь с нами для детальной поддержки
+                {{ 'help_description' | transloco }}
             </div>
         </div>
     </div>
@@ -29,13 +25,13 @@
             <!-- Email Card -->
             <div class="relative flex flex-col rounded-2xl shadow hover:shadow-lg overflow-hidden bg-card transition-shadow ease-in-out duration-150">
                 <div class="flex flex-col flex-auto items-center p-4 text-center">
-                    <div class="text-2xl font-semibold">Почта</div>
-                    <div class="md:max-w-40 mt-1 text-secondary">Свяжитесь с нами через электронную почту</div>
+                    <div class="text-2xl font-semibold">{{ 'email' | transloco }}</div>
+                    <div class="md:max-w-40 mt-1 text-secondary">{{ 'email_description' | transloco }}</div>
                 </div>
                 <div class="flex items-center justify-center py-4 px-8 text-primary-500 dark:text-primary-400 bg-gray-50 dark:bg-transparent dark:border-t">
                     <a href="mailto:test@gmail.com" class="flex items-center">
                         <span class="absolute inset-0"></span>
-                        <span class="font-medium">Написать на почту</span>
+                        <span class="font-medium">{{ 'email_button' | transloco }}</span>
                         <mat-icon class="ml-2 icon-size-5 text-current" [svgIcon]="'heroicons_solid:mail'"></mat-icon>
                     </a>
                 </div>
@@ -43,13 +39,13 @@
             <!-- Phone Number Card -->
             <div class="relative flex flex-col rounded-2xl shadow hover:shadow-lg overflow-hidden bg-card transition-shadow ease-in-out duration-150">
                 <div class="flex flex-col flex-auto items-center p-4 text-center">
-                    <div class="text-2xl font-semibold">Телефон</div>
-                    <div class="md:max-w-40 mt-1 text-secondary">Позвоните нам для получения помощи</div>
+                    <div class="text-2xl font-semibold">{{ 'phone' | transloco }}</div>
+                    <div class="md:max-w-40 mt-1 text-secondary">{{ 'phone_description' | transloco }}</div>
                 </div>
                 <div class="flex items-center justify-center py-4 px-8 text-primary-500 dark:text-primary-400 bg-gray-50 dark:bg-transparent dark:border-t">
                     <a href="tel:+77777777777" class="flex items-center">
                         <span class="absolute inset-0"></span>
-                        <span class="font-medium">Позвонить</span>
+                        <span class="font-medium">{{ 'phone_button' | transloco }}</span>
                         <mat-icon class="ml-2 icon-size-5 text-current" [svgIcon]="'heroicons_solid:phone'"></mat-icon>
                     </a>
                 </div>
@@ -57,64 +53,63 @@
             <!-- Additional Contact Option Card -->
             <div class="relative flex flex-col rounded-2xl shadow hover:shadow-lg overflow-hidden bg-card transition-shadow ease-in-out duration-150">
                 <div class="flex flex-col flex-auto items-center p-4 text-center">
-                    <div class="text-2xl font-semibold">Дополнительный контакт</div>
-                    <div class="md:max-w-40 mt-1 text-secondary">Другой способ связи с нами</div>
+                    <div class="text-2xl font-semibold">{{ 'additional_contact' | transloco }}</div>
+                    <div class="md:max-w-40 mt-1 text-secondary">{{ 'additional_contact_description' | transloco }}</div>
                 </div>
                 <div class="flex items-center justify-center py-4 px-8 text-primary-500 dark:text-primary-400 bg-gray-50 dark:bg-transparent dark:border-t">
                     <a href="/" class="flex items-center">
                         <span class="absolute inset-0"></span>
-                        <span class="font-medium">Связаться другим способом</span>
+                        <span class="font-medium">{{ 'additional_contact_button' | transloco }}</span>
                         <mat-icon class="ml-2 icon-size-5 text-current" [svgIcon]="'heroicons_solid:support'"></mat-icon>
                     </a>
                 </div>
             </div>
         </div>
+
         <!-- FAQs -->
-        <div class="mt-24 text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight text-center">Наиболее часто задаваемые вопросы</div>
-        <div class="mt-2 text-xl text-center text-secondary">Здесь вы найдете наиболее часто задаваемые вопросы, которые помогут вам начать работу</div>
+        <div class="mt-24 text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight text-center">{{ 'faq_title' | transloco }}</div>
+        <div class="mt-2 text-xl text-center text-secondary">{{ 'faq_description' | transloco }}</div>
         <mat-accordion class="max-w-4xl mt-12">
             <ng-container>
-
                 <!-- Question 1 -->
                 <mat-expansion-panel>
                     <mat-expansion-panel-header [collapsedHeight]="'56px'">
-                        <mat-panel-title>Как зарегистрироваться на сайте?</mat-panel-title>
+                        <mat-panel-title>{{ 'faq_question_1' | transloco }}</mat-panel-title>
                     </mat-expansion-panel-header>
-                    Вы можете зарегистрироваться, нажав на кнопку "Регистрация" в верхней части страницы и следуя инструкциям. Введите необходимые данные, и после подтверждения регистрации вы сможете получить доступ к учебным материалам.
+                    <div>{{ 'faq_answer_1' | transloco }}</div>
                 </mat-expansion-panel>
 
                 <!-- Question 2 -->
                 <mat-expansion-panel>
                     <mat-expansion-panel-header [collapsedHeight]="'56px'">
-                        <mat-panel-title>Для кого предназначен этот ресурс?</mat-panel-title>
+                        <mat-panel-title>{{ 'faq_question_2' | transloco }}</mat-panel-title>
                     </mat-expansion-panel-header>
-                    Наш сайт предназначен для учащихся школ с 1 по 11 класс, а также для учителей и родителей, которые хотят получить доступ к качественным учебным материалам и полезным ресурсам для подготовки к урокам и контрольным.
+                    <div>{{ 'faq_answer_2' | transloco }}</div>
                 </mat-expansion-panel>
 
                 <!-- Question 3 -->
                 <mat-expansion-panel>
                     <mat-expansion-panel-header [collapsedHeight]="'56px'">
-                        <mat-panel-title>Как использовать слайды на уроках?</mat-panel-title>
+                        <mat-panel-title>{{ 'faq_question_3' | transloco }}</mat-panel-title>
                     </mat-expansion-panel-header>
-                    Слайды могут быть использованы учителями для проведения интерактивных уроков. Просто откройте нужный слайд на экране или устройстве и следуйте структуре урока. Ученики могут также использовать слайды для самостоятельного изучения материала.
+                    <div>{{ 'faq_answer_3' | transloco }}</div>
                 </mat-expansion-panel>
 
                 <!-- Question 4 -->
                 <mat-expansion-panel>
                     <mat-expansion-panel-header [collapsedHeight]="'56px'">
-                        <mat-panel-title>Можно ли скачать учебные материалы?</mat-panel-title>
+                        <mat-panel-title>{{ 'faq_question_4' | transloco }}</mat-panel-title>
                     </mat-expansion-panel-header>
-                    Да, зарегистрированные пользователи могут скачивать учебные материалы для использования в режиме оффлайн. Мы предлагаем удобные форматы для скачивания и хранения документов на вашем устройстве.
+                    <div>{{ 'faq_answer_4' | transloco }}</div>
                 </mat-expansion-panel>
 
                 <!-- Question 5 -->
                 <mat-expansion-panel>
                     <mat-expansion-panel-header [collapsedHeight]="'56px'">
-                        <mat-panel-title>Какие предметы представлены на сайте?</mat-panel-title>
+                        <mat-panel-title>{{ 'faq_question_5' | transloco }}</mat-panel-title>
                     </mat-expansion-panel-header>
-                    На нашем сайте собраны учебные материалы по всем основным школьным предметам, включая математику, литературу, химию, физику, историю, биологию и другие. Вы можете легко найти материалы по каждому предмету и теме для разных классов.
+                    <div>{{ 'faq_answer_5' | transloco }}</div>
                 </mat-expansion-panel>
-
             </ng-container>
         </mat-accordion>
     </div>

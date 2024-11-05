@@ -8,19 +8,21 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { SharedModule } from '../../../shared/shared.module';
 import { SearchComponent } from './search.component';
+import {TranslocoModule} from "@ngneat/transloco";
 
 @NgModule({
     declarations: [
         SearchComponent
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild([]),
         MatAutocompleteModule,
         MatButtonModule,
         MatFormFieldModule,
         MatIconModule,
         MatInputModule,
-        SharedModule
+        SharedModule,
+        TranslocoModule
     ],
     exports     : [
         SearchComponent

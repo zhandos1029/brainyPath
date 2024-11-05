@@ -23,12 +23,12 @@ export const categories = [
         slug: 'квантовая'
     }
 ];
+
 export const courses = [
     {
         id: '1',
-        title: 'Законы Ньютона',
-        slug: 'Законы Ньютона',
-        description: 'Законы Ньютона',
+        titleKey: 'course.newton_laws',
+        descriptionKey: 'course.newton_laws_description',
         category: 'механика',
         duration: 45,
         totalSteps: 3,
@@ -41,9 +41,8 @@ export const courses = [
     },
     {
         id: '2',
-        title: 'Лагранжева механика',
-        slug: 'Лагранжева механика',
-        description: 'Лагранжева механика',
+        titleKey: 'course.lagrange_mechanics',
+        descriptionKey: 'course.lagrange_mechanics_description',
         category: 'механика',
         duration: 90,
         totalSteps: 3,
@@ -59,20 +58,20 @@ export const courses = [
 export const demoCourseSteps = [
     {
         order: 0,
-        title: 'Introduction',
-        subtitle: 'Introducing the library and how it works',
-        content: `<h2 class="text-2xl sm:text-3xl">Физика</h1> ${physicsCourseContent}`
+        title: 'Первый закон Ньютона',
+        subtitle: 'Закон инерции',
+        content: `<h2 class="text-2xl sm:text-3xl">Закон инерции</h1> ${physicsCourseContent}`
     },
     {
         order: 1,
-        title: 'Introduction 2',
-        subtitle: 'Where to find the sample code and how to access it',
-        content: `<h2 class="text-2xl sm:text-3xl">2 Физика</h1> ${physics2CourseContent}`
+        title: 'Второй закон Ньютона',
+        subtitle: 'Закон ускорения',
+        content: `<h2 class="text-2xl sm:text-3xl">Закон ускорения</h1> ${physics2CourseContent}`
     },
     {
         order: 2,
-        title: 'Introduction 3',
-        subtitle: 'Where to find the sample code and how to access it',
-        content: `<h2 class="text-2xl sm:text-3xl">3 Физика</h1> ${physics3CourseContent}`
+        title: 'Третий закон Ньютона',
+        subtitle: 'Закон действия и противодействия',
+        content: `<h2 class="text-2xl sm:text-3xl">Закон действия и противодействия</h1> ${physics3CourseContent}`
     }
 ];

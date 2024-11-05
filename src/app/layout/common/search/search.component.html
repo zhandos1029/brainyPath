@@ -87,7 +87,7 @@
             <mat-option
                 class="py-0 px-6 text-md pointer-events-none text-secondary bg-transparent"
                 *ngIf="resultSets && !resultSets.length">
-                No results found!
+                {{ 'noCourses.message' | transloco }}
             </mat-option>
             <ng-container *ngFor="let resultSet of resultSets; trackBy: trackByFn">
                 <mat-optgroup class="flex items-center mt-2 px-2">
@@ -145,9 +145,9 @@
         <div
             class="truncate leading-normal"
             [innerHTML]="result.title"></div>
-        <div class="truncate leading-normal text-sm text-secondary">
-            {{result.link}}
-        </div>
+<!--        <div class="truncate leading-normal text-sm text-secondary">-->
+<!--            {{result.link}}-->
+<!--        </div>-->
     </div>
 </ng-template>
 

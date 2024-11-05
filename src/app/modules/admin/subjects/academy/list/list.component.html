@@ -1,6 +1,4 @@
-<div
-    class="absolute inset-0 flex flex-col min-w-0 overflow-y-auto"
-    cdkScrollable>
+<div class="absolute inset-0 flex flex-col min-w-0 overflow-y-auto" cdkScrollable>
 
     <!-- Header -->
     <div class="relative flex-0 py-8 px-4 sm:p-16 overflow-hidden bg-gray-800 dark">
@@ -15,12 +13,12 @@
         </svg>
         <!-- @formatter:on -->
         <div class="z-10 relative flex flex-col items-center">
-            <h2 class="text-xl font-semibold">ФИЗИКА</h2>
+            <h2 class="text-xl font-semibold">{{ 'header.subject' | transloco }}</h2>
             <div class="mt-1 text-4xl sm:text-7xl font-extrabold tracking-tight leading-tight text-center">
-                Область естествознания
+                {{ 'header.subtitle' | transloco }}
             </div>
             <div class="max-w-2xl mt-6 sm:text-2xl text-center tracking-tight text-secondary">
-                Фундаментальная наука о наиболее общих законах природы, о материи, её структуре, движении и правилах трансформации.
+                {{ 'header.description' | transloco }}
             </div>
         </div>
     </div>
@@ -33,32 +31,32 @@
             <div class="flex flex-col sm:flex-row items-center justify-between w-full max-w-xs sm:max-w-none">
                 <mat-form-field class="fuse-mat-no-subscript w-full sm:w-36">
                     <mat-select
-                        [value]="'all'"
-                        (selectionChange)="filterByCategory($event)">
-                        <mat-option [value]="'all'">Все</mat-option>
+                            [value]="'all'"
+                            (selectionChange)="filterByCategory($event)">
+                        <mat-option [value]="'all'">{{ 'filters.all' | transloco }}</mat-option>
                         <ng-container *ngFor="let category of categories; trackBy: trackByFn">
                             <mat-option [value]="category.slug">{{category.title}}</mat-option>
                         </ng-container>
                     </mat-select>
                 </mat-form-field>
                 <mat-form-field
-                    class="fuse-mat-no-subscript w-full sm:w-72 mt-4 sm:mt-0 sm:ml-4"
-                    [floatLabel]="'always'">
+                        class="fuse-mat-no-subscript w-full sm:w-72 mt-4 sm:mt-0 sm:ml-4"
+                        [floatLabel]="'always'">
                     <mat-icon
-                        matPrefix
-                        class="icon-size-5"
-                        [svgIcon]="'heroicons_solid:search'"></mat-icon>
+                            matPrefix
+                            class="icon-size-5"
+                            [svgIcon]="'heroicons_solid:search'"></mat-icon>
                     <input
-                        (input)="filterByQuery(query.value)"
-                        placeholder="Search by title or description"
-                        matInput
-                        #query>
+                            (input)="filterByQuery(query.value)"
+                            placeholder="{{ 'filters.searchPlaceholder' | transloco }}"
+                            matInput
+                            #query>
                 </mat-form-field>
                 <mat-slide-toggle
-                    class="mt-8 sm:mt-0 sm:ml-auto"
-                    [color]="'primary'"
-                    (change)="toggleCompleted($event)">
-                    Закрытые
+                        class="mt-8 sm:mt-0 sm:ml-auto"
+                        [color]="'primary'"
+                        (change)="toggleCompleted($event)">
+                    {{ 'filters.showCompleted' | transloco }}
                 </mat-slide-toggle>
             </div>
             <!-- Courses -->
@@ -69,7 +67,7 @@
                         <div class="flex flex-col h-76 shadow rounded-2xl overflow-hidden bg-card">
                             <div class="flex flex-col p-6">
                                 <div class="flex items-center justify-between">
-                                    <!-- Course category -->
+                                    <!-- Категория курса -->
                                     <ng-container *ngIf="(course.category | fuseFindByKey:'slug':categories) as category">
                                         <div
                                             class="py-0.5 px-3 rounded-full text-sm font-semibold"
@@ -81,59 +79,43 @@
                                         </div>
                                     </ng-container>
                                 </div>
-                                <!-- Course title & description -->
-                                <div class="mt-4 text-lg font-medium">{{course.title}}</div>
-                                <div class="mt-0.5 line-clamp-2 text-secondary">{{course.description}}</div>
+                                <!-- Название и описание курса -->
+                                <div class="mt-4 text-lg font-medium">{{ course.titleKey | transloco }}</div>
+                                <div class="mt-0.5 line-clamp-2 text-secondary">{{ course.descriptionKey | transloco }}</div>
                                 <div class="w-12 h-1 my-6 border-t-2"></div>
-                                <!-- Course time -->
+                                <!-- Время курса -->
                                 <div class="flex items-center leading-5 text-md text-secondary">
-                                    <mat-icon
-                                        class="icon-size-5 text-hint"
-                                        [svgIcon]="'heroicons_solid:clock'"></mat-icon>
-                                    <div class="ml-1.5">{{course.duration}} минут</div>
+                                    <mat-icon class="icon-size-5 text-hint" [svgIcon]="'heroicons_solid:clock'"></mat-icon>
+                                    <div class="ml-1.5">{{ course.duration }} {{ 'course.minutes' | transloco }}</div>
                                 </div>
                             </div>
                             <!-- Footer -->
                             <div class="flex flex-col w-full mt-auto">
-                                <!-- Course progress -->
+                                <!-- Прогресс курса -->
                                 <div class="relative h-0.5">
-                                    <div
-                                        class="z-10 absolute inset-x-0 h-6 -mt-3"
-                                        [matTooltip]="course.progress.currentStep / course.totalSteps | percent"
-                                        [matTooltipPosition]="'above'"
-                                        [matTooltipClass]="'-mb-0.5'"></div>
-                                    <mat-progress-bar
-                                        class="h-0.5"
-                                        [value]="(100 * course.progress.currentStep) / course.totalSteps"></mat-progress-bar>
+                                    <div class="z-10 absolute inset-x-0 h-6 -mt-3"
+                                         [matTooltip]="course.progress.currentStep / course.totalSteps | percent"
+                                         [matTooltipPosition]="'above'"
+                                         [matTooltipClass]="'-mb-0.5'"></div>
+                                    <mat-progress-bar class="h-0.5"
+                                                      [value]="(100 * course.progress.currentStep) / course.totalSteps"></mat-progress-bar>
                                 </div>
-
-                                <!-- Course launch button -->
+                                <!-- Кнопка запуска курса -->
                                 <div class="px-6 py-4 text-right bg-gray-50 dark:bg-transparent">
-                                    <a
-                                        mat-stroked-button
-                                        [routerLink]="[course.id]">
+                                    <a mat-stroked-button [routerLink]="[course.id]">
                                         <span class="inline-flex items-center">
-
-                                            <!-- Not started -->
                                             <ng-container *ngIf="course.progress.currentStep === 0">
-                                                <!-- Never completed -->
                                                 <ng-container *ngIf="course.progress.completed === 0">
-                                                    <span>Начать</span>
+                                                    <span>{{ 'course.start' | transloco }}</span>
                                                 </ng-container>
-                                                <!-- Completed before -->
                                                 <ng-container *ngIf="course.progress.completed > 0">
-                                                    <span>Начать</span>
+                                                    <span>{{ 'course.start' | transloco }}</span>
                                                 </ng-container>
                                             </ng-container>
-
-                                            <!-- Started -->
                                             <ng-container *ngIf="course.progress.currentStep > 0">
-                                                <span>Продолжить</span>
+                                                <span>{{ 'course.continue' | transloco }}</span>
                                             </ng-container>
-
-                                            <mat-icon
-                                                class="ml-1.5 icon-size-5"
-                                                [svgIcon]="'heroicons_solid:arrow-sm-right'"></mat-icon>
+                                            <mat-icon class="ml-1.5 icon-size-5" [svgIcon]="'heroicons_solid:arrow-sm-right'"></mat-icon>
                                         </span>
                                     </a>
                                 </div>
@@ -147,9 +129,9 @@
             <ng-template #noCourses>
                 <div class="flex flex-auto flex-col items-center justify-center bg-gray-100 dark:bg-transparent">
                     <mat-icon
-                        class="icon-size-24"
-                        [svgIcon]="'heroicons_outline:document-search'"></mat-icon>
-                    <div class="mt-6 text-2xl font-semibold tracking-tight text-secondary">Нету!</div>
+                            class="icon-size-24"
+                            [svgIcon]="'heroicons_outline:document-search'"></mat-icon>
+                    <div class="mt-6 text-2xl font-semibold tracking-tight text-secondary">{{ 'noCourses.message' | transloco }}</div>
                 </div>
             </ng-template>
         </div>
